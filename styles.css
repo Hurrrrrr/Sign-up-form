@@ -1,0 +1,27 @@
+#doc-wrap {
+    display: flex;
+}
+
+#left-wrap {
+    display: flex;
+    flex-direction: column;
+    background: no-repeat center url("./images/clown.jpg");
+    background-size: 100%;
+}
+
+#right-wrap {
+    display: flex;
+    flex-direction: column;
+}
+
+#logo-wrap {
+    display: flex;
+}
+
+#photo-credit {
+    color: #ffffff;
+}
+
+h1 {
+    color: #ffffff;
+}
