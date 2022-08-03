@@ -26,11 +26,13 @@ a:visited {
     background-size: 100%;
     width: 400px;
     height: 600px;
+    max-height: 100vh;
 }
 
 #right-wrap {
     display: flex;
     flex-direction: column;
+    width:700px;
 }
 
 #logo-wrap {
@@ -75,12 +77,54 @@ h1 {
 
 #form-wrap {
   padding-left: 30px;
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 2px 5px;
 }
 
-input:focus {
-  box-shadow: rgba(0, 0, 0, 0.35) 0px 3px 10px;
-  border: 2px solid blue;
+input {
+  border-radius: 4px;
+  border-width: 1px;
+  outline-style: none;  /* Necessary to allow the :focus border change to work */
 }
+
+input:focus{
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 2px 5px;
+  border: 1px solid blue;
+}
+
+input:invalid:focus {
+  border-color: red;
+}
+
+label {
+  display: block;
+  text-transform: uppercase;
+  color: #777777;
+  font-size: .7rem;
+  font-weight: 600;
+}
+
+p {
+  margin: 10px 60px 10px 0px;
+}
+
+#account-wrap {
+  padding-left: 30px;
+  margin-top: 15px;
+}
+
+#create-button {
+  padding: 10px 50px;
+  background-image: linear-gradient(to right, #f2c927  25%,#f60000 60%, #0026ff  100%);
+  border-radius: 5px;
+  font-weight: 700;
+  outline-style: none;
+  border-width: 0px;
+}
+
+#login-text {
+  font-size: 0.8rem;
+}
+
 
 
 /*! normalize.css v8.0.1 | MIT License | github.com/necolas/normalize.css */

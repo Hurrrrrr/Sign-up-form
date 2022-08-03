@@ -6,8 +6,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link rel="stylesheet" href="styles.css">
+    <script defer src="script.js"></script>
 </head>
 <body>
+    <div id="error"></div>
     <div id="doc-wrap">
         <div id="left-wrap">
             <div id="logo-wrap">
@@ -24,55 +26,59 @@
             <div id="form-wrap">
                 <table>
                     <form id="user_form" action="">
-                        <h2>Let's do this!</h2>
-                        <tr>
-                            <td>
-                                <p>
-                                    <label for="first_name">First Name:</label>
-                                    <input type="text" id="first_name" name="first_name" placeholder="Alice...">
-                                </p>
-                            </td>
-                            <td>
-                                <p>
-                                    <label for="last_name">Last Name:</label>
-                                    <input type="text" id="last_name" name="last_name" placeholder="Adams...">
-                                </p>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>
-                                <p>
-                                    <label for="user_email">Email Address:</label>
-                                    <input type="email" id="user_email" name="user_email" placeholder="you@server.net">
-                                </p>
-                            </td>
-                            <td>
-                                <p>
-                                    <label for="user_phone">Phone Number:</label>
-                                    <input type="tel" id="user_phone" name="user_phone" placeholder="5555555555">
-                                </p>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>
-                                <p>
-                                    <label for="user_pw">Password:</label>
-                                    <input type="password" id="user_pw" name="user_pw">
-                                </p>
-                            </td>
-                            <td>
-                                <p>
-                                    <label for="confirm_pw">Confirm Password:</label>
-                                    <input type="password" id="confirm_pw" name="confirm_pw">
-                                </p>
-                            </td>
-                        </tr>
+                            <h2>Let's do this!</h2>
+                            <tr>
+                                <td>
+                                    <p>
+                                        <label for="first_name">First Name</label>
+                                        <input type="text" id="first_name" name="first_name" placeholder="Alice..." pattern="[a-z]{1-15}" title="Please enter a name of 1-15 letters" required>
+                                    </p>
+                                </td>
+                                <td>
+                                    <p>
+                                        <label for="last_name">Last Name</label>
+                                        <input type="text" id="last_name" name="last_name" placeholder="Adams..." pattern="[a-z]{1-15}" title="Please enter a name of 1-15 letters" required>
+                                    </p>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <p>
+                                        <label for="user_email">Email Address</label>
+                                        <input type="email" id="user_email" name="user_email" placeholder="you@server.net" title="Please enter a valid email address" required>
+                                    </p>
+                                </td>
+                                <td>
+                                    <p>
+                                        <label for="user_phone">Phone Number</label>
+                                        <input type="tel" id="user_phone" name="user_phone" placeholder="5555555555" pattern="[0-9]{10}" title="Please enter a 10-digit phone number with no special characters, ie. 5555555555" required>
+                                    </p>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <p>
+                                        <label for="user_pw">Password</label>
+                                        <input type="password" id="user_pw" name="user_pw" pattern="[\w]{8,15}" title="Password must be 8-15 characters and cannot contain special characters" required>
+                                    </p>
+                                </td>
+                                <td>
+                                    <p>
+                                        <label for="confirm_pw">Confirm Password</label>
+                                        <input type="password" id="confirm_pw" name="confirm_pw" pattern="[\w]{8,15}" title="Password must be 8-15 characters and cannot contain special characters" required>
+                                    </p>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <button type="submit" id="create-button">Create Account</button>
+                                </td>
+                            </tr>
                     </form>
                 </table>
-            </div>
-            <div id="account-wrap">
-                <button id="create-button">Create Account</button>
-                <p>Already have an account? <a href="">Log in</a></p>
+                <div id="account-wrap">
+                    <p id="login-text">Already have an account? <a href="">Log in</a></p>
+                </div>
             </div>
         </div>
     </div>
